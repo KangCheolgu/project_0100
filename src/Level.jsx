@@ -57,7 +57,7 @@ export function BlockSpinner({ position = [0,0,0]})
 {
   const obstacle = useRef()
   const [speed] = useState(()=> (Math.random() + 0.2) * (Math.random() < 0.5 ? -1 : 1))
-
+  
   useFrame((state)=>{
     const time = state.clock.getElapsedTime()
     
@@ -164,10 +164,19 @@ export function Level({count = 5, types=[BlockSpinner, BlockAxe, BlockLimbo], se
     return blocks
   }, [count, types, seed])
 
-  console.log(blocks)
+  // console.log(blocks)
     return <>
         <BlockStart position={[0,0,0]}/>
-        {blocks.map((Block, index)=> <Block key={index} position={[0,0, -(index+1)*4]}/>)}
+        <BlockLimbo position={[0,0,-4]} />
+        <BlockSpinner position={[0,0,-8]} />
+        <BlockAxe position={[0,0,-12]} />
+        <BlockAxe position={[0,0,-16]} />
+        <BlockSpinner position={[0,0,-20]} />
+        <BlockSpinner position={[0,0,-24]} />
+        <BlockLimbo position={[0,0,-28]} />
+        <BlockLimbo position={[0,0,-32]} />
+        <BlockSpinner position={[0,0,-36]} />
+        <BlockAxe position={[0,0,-40]} />
         <BlockEnd position={[0, 0, -(count+1) * 4]}/>
         <Bounds length={count + 2}/>
     </>
