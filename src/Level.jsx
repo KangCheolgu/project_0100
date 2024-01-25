@@ -23,11 +23,11 @@ export function BlockStart({position = [0,0,0]})
               textAlign="right"
               position={ [ 0.75, 0.65, 0 ] }
               rotation-y={ - 0.25 }
-             >Marble Race
+             >0100
              <meshBasicMaterial toneMapped={ false } />
              </Text>
     </Float>
-    <mesh geometry={boxGeometry} material={floor1Material} position={[0, -0.1, 0]} scale={[4, 0.2, 4]}  receiveShadow>
+    <mesh geometry={boxGeometry} material={floor1Material} position={[0, -0.1, -20]} scale={[4, 0.2, -44]}  receiveShadow>
       <meshStandardMaterial color="limegreen" />
     </mesh>
   </group>
@@ -167,16 +167,6 @@ export function Level({count = 5, types=[BlockSpinner, BlockAxe, BlockLimbo], se
   // console.log(blocks)
     return <>
         <BlockStart position={[0,0,0]}/>
-        <BlockLimbo position={[0,0,-4]} />
-        <BlockSpinner position={[0,0,-8]} />
-        <BlockAxe position={[0,0,-12]} />
-        <BlockAxe position={[0,0,-16]} />
-        <BlockSpinner position={[0,0,-20]} />
-        <BlockSpinner position={[0,0,-24]} />
-        <BlockLimbo position={[0,0,-28]} />
-        <BlockLimbo position={[0,0,-32]} />
-        <BlockSpinner position={[0,0,-36]} />
-        <BlockAxe position={[0,0,-40]} />
         <BlockEnd position={[0, 0, -(count+1) * 4]}/>
         <Bounds length={count + 2}/>
     </>
