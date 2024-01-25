@@ -2,11 +2,11 @@ import { Server } from "socket.io"
 
 const io = new Server({
   cors: {
-    origin: ["http://localhost:5173","http://192.168.1.243:5173"]
+    origin: ["http://localhost:5000", "http://15.164.215.83:5000"]
   },
 })
 
-io.listen(3001)
+io.listen(3000)
 
 const Players = []
 

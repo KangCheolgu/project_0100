@@ -143,7 +143,6 @@ export default function Player(props) {
 
       handlePositionChange()
 
-      // body.current.setTranslation(props.position)
     }
   });
 
